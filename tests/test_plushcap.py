@@ -14,15 +14,25 @@ from plushcap import plushcap
 
 
 class TestPlushcap(unittest.TestCase):
-
+    """
+        Tests that URLs can be retrieved when they exist. URLs that do not
+        exist or are down return the proper status codes.
+    """
     def setUp(self):
-        pass
-
-    def test_something(self):
-        pass
-
+        self.working_url = "http://www.fullstackpython.com/"
+        self.non_existent_url = "http://www.fullstackpython-none.com/"
+    
     def tearDown(self):
         pass
+
+    def test_working_url(self):
+        status_code, content = plushcap.ping_server(self.working_url)
+        self.assertEquals(status_code, 200)
+
+    def test_non_existent_url(self):
+        status_code, content = plushcap.ping_server(self.non_existent_url)
+        self.assertEquals(status_code, 404)
+
 
 if __name__ == '__main__':
     unittest.main()
