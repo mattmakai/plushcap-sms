@@ -15,4 +15,4 @@ if __name__=='__main__':
         print("usage: python plushcap.py http://test.url/")
     else:
         status_code, content = ping_server(sys.argv[1])
-        print status_code
+        print(status_code)
