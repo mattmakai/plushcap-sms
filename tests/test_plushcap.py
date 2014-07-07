@@ -20,17 +20,17 @@ class TestPlushcap(unittest.TestCase):
     """
     def setUp(self):
         self.working_url = "http://www.fullstackpython.com/"
-        self.non_existent_url = "http://www.fullstackpython-none.com/"
+        self.non_existent_url = "http://localhost:8889/"
     
     def tearDown(self):
         pass
 
     def test_working_url(self):
-        status_code, content = plushcap.ping_server(self.working_url)
+        status_code, content = plushcap.contact_url(self.working_url)
         self.assertEquals(status_code, 200)
 
     def test_non_existent_url(self):
-        status_code, content = plushcap.ping_server(self.non_existent_url)
+        status_code, content = plushcap.contact_url(self.non_existent_url)
         self.assertEquals(status_code, 404)
 
 
