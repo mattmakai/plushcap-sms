@@ -12,7 +12,7 @@ def ping_server(server_name):
 
 if __name__=='__main__':
     if len(sys.argv) < 2:
-        print "usage: python plushcap.py http://test.url/"
+        print("usage: python plushcap.py http://test.url/")
     else:
         status_code, content = ping_server(sys.argv[1])
         print status_code
