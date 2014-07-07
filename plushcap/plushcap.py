@@ -2,10 +2,16 @@
 import sys
 import requests
 
-HTTP_OK = 200
-HTTP_FORBIDDEN = 403
-HTTP_NOT_FOUND = 404
-HTTP_INTERNAL_SERVER_ERROR = 500
+CONNECTION_ERROR = -100
+
+responses = {CONNECTION_ERROR: "is down or did not respond to the request.",
+             200: "is online and returning 200 OK.",
+             403: "is online but is denying the request due to lack of " + \
+                  "permission.",
+             404: "is online but the webpage at that URL was not found.",
+             500: "is online but returning an internal server error.",
+}
+
 
 def contact_url(url):
     """
@@ -16,18 +22,7 @@ def contact_url(url):
         response = requests.get(url)
         return response.status_code, response.content
     except requests.exceptions.ConnectionError:
-        return 404, ""
-
-def handle_response(status_code):
-    if status_code == HTTP_OK:
-        return '%s is online and returning 200 OK' % sys.argv[1]
-    elif status_code == HTTP_FORBIDDEN:
-        return 'Unable to access %s due to lack of permissions.' % sys.argv[1]
-    elif status_code == HTTP_NOT_FOUND:
-        return '%s was not found or is not available.' % sys.argv[1]
-    elif status_code == HTTP_INTERNAL_SERVER_ERROR:
-        return '%s is not working properly. Internal server error.' % \
-            sys.argv[1]
+        return CONNECTION_ERROR, ""
 
 
 if __name__=='__main__':
@@ -35,4 +30,7 @@ if __name__=='__main__':
         print("usage: python plushcap.py http://test.url/")
     else:
         status_code, content = contact_url(url=sys.argv[1])
-        print(handle_response(status_code))
+        if responses.has_key(status_code):
+            print(("The server at %s " + responses[status_code]) % sys.argv[1])
+        else:
+            print("Server response was unknown, status code: " + status_code)

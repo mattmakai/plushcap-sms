@@ -31,7 +31,7 @@ class TestPlushcap(unittest.TestCase):
 
     def test_non_existent_url(self):
         status_code, content = plushcap.contact_url(self.non_existent_url)
-        self.assertEquals(status_code, 404)
+        self.assertEquals(status_code, plushcap.CONNECTION_ERROR)
 
 
 if __name__ == '__main__':
