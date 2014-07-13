@@ -13,7 +13,7 @@ import os
 import unittest
 
 sys.path.append(os.path.join('..', 'plushcap'))
-import plushcap
+from plushcap import plushcap
 
 
 class TestPlushcap(unittest.TestCase):
@@ -38,4 +38,5 @@ class TestPlushcap(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    unittest.main()
+    suite = unittest.defaultTestLoader.loadTestsFromTestCase(TestPlushcap)
+    unittest.TextTestRunner().run(suite)

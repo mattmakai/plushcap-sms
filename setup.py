@@ -4,11 +4,12 @@
 import os
 import sys
 
-
 try:
     from setuptools import setup
 except ImportError:
     from distutils.core import setup
+
+sys.path.append(os.path.join(os.path.dirname(__file__), 'plushcap'))
 
 
 readme = open('README.rst').read()

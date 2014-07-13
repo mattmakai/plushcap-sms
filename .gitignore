@@ -8,3 +8,4 @@ build
 *.log
 _build
 setenvs.sh
+__pycache__
