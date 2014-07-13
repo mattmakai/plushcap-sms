@@ -7,3 +7,4 @@ build
 *.db
 *.log
 _build
+setenvs.sh

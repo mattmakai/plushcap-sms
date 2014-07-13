@@ -24,7 +24,7 @@ test_requirements = [
 
 setup(
     name='plushcap',
-    version='0.1.1',
+    version='0.2.0',
     description='Plushcap monitors websites and alerts people via text or phone call if there is a problem.',
     long_description=readme + '\n\n' + history,
     author='Matt Makai',

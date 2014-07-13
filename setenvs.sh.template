@@ -1,0 +1,5 @@
+#!/bin/bash
+export TWILIO_ACCOUNT_SID=''    # found on Twilio dashboard or account page
+export TWILIO_AUTH_TOKEN=''     # found on Twilio dashboard or account page
+export TWILIO_FROM_NUMBER=''    # format: +12025551234
+export ALERT_NUMBER=''          # format: +12025551234
