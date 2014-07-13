@@ -7,10 +7,13 @@ test_plushcap
 
 Tests for `plushcap` module.
 """
+import sys
+import os
 
 import unittest
 
-from plushcap import plushcap
+sys.path.append(os.path.join('..', 'plushcap'))
+import plushcap
 
 
 class TestPlushcap(unittest.TestCase):
@@ -27,11 +30,11 @@ class TestPlushcap(unittest.TestCase):
 
     def test_working_url(self):
         status_code, content = plushcap.contact_url(self.working_url)
-        self.assertEquals(status_code, 200)
+        self.assertEqual(status_code, 200)
 
     def test_non_existent_url(self):
         status_code, content = plushcap.contact_url(self.non_existent_url)
-        self.assertEquals(status_code, plushcap.CONNECTION_ERROR)
+        self.assertEqual(status_code, plushcap.CONNECTION_ERROR)
 
 
 if __name__ == '__main__':
