@@ -34,7 +34,6 @@ setup(
     packages=[
         'plushcap',
     ],
-    scripts=['setup.py'],
     package_dir={'plushcap':
                  'plushcap'},
     include_package_data=True,
