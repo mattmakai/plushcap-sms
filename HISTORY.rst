@@ -3,6 +3,10 @@
 History
 -------
 
+0.2.1 (2014-07-15)
+------------------
+* Fixing issue with setup scripts.
+
 0.2.0 (2014-07-13)
 ------------------
 * Library now sends an SMS alert if a URL returns something other than 200 OK.

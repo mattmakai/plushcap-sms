@@ -25,7 +25,7 @@ test_requirements = [
 
 setup(
     name='plushcap',
-    version='0.2.0',
+    version='0.2.1',
     description='Plushcap monitors websites and alerts people via text or phone call if there is a problem.',
     long_description=readme + '\n\n' + history,
     author='Matt Makai',
@@ -34,6 +34,7 @@ setup(
     packages=[
         'plushcap',
     ],
+    scripts=['setup.py'],
     package_dir={'plushcap':
                  'plushcap'},
     include_package_data=True,
