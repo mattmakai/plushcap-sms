@@ -18,4 +18,6 @@ is a problem.
 Features
 --------
 
-* TODO
+* Continuously monitors a URL to determine if it is responding appropriately.
+* Sends an SMS alert to a number if the URL HTTP response status code is
+  anything other than 200 OK.
