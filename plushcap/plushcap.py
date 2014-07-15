@@ -41,7 +41,7 @@ def check_url(url, twilio_client, twilio_from_number, alert_number,
             # alert time
             send_alert(url, status_code, twilio_client, twilio_from_number, 
                 alert_number)
-        time.sleep(60)
+        time.sleep(frequency)
 
 
 def send_alert(url, status_code, twilio_client, twilio_from_number, 
