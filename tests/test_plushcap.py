@@ -12,6 +12,7 @@ import os
 
 import unittest
 
+sys.path.append(os.path.join('.', 'plushcap'))
 sys.path.append(os.path.join('..', 'plushcap'))
 from plushcap import plushcap
 
